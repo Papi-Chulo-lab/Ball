@@ -17,12 +17,12 @@ public class Spawner : MonoBehaviour
     {
         yield return new WaitForSeconds(spawnTime);
         while (true) {
-            SpawnCoin();
+            SpawnItem();
             yield return new WaitForSeconds(spawnTime);
         }
     }
 
-    void SpawnCoin()
+    void SpawnItem()
     {
         float xPos = Random.Range(-maxPos, maxPos);
         float zPos = Random.Range(-maxPos, maxPos);
