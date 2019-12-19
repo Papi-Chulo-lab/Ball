@@ -8,7 +8,6 @@ public class Treasure : MonoBehaviour
     [SerializeField] GameObject explosivePrefab;
     private void OnTriggerEnter(Collider other)
     {
-        print("Im here");
         if (other.gameObject.tag.Equals("Player"))
         {
             if (GameManager.gm != null) {

@@ -5,11 +5,13 @@ using UnityEngine;
 public class Chaser : MonoBehaviour
 {
     private Transform target;
-    [SerializeField] float speed = 4.0f; 
-
+    [SerializeField] float speed = 4.0f;
+    GameObject player;
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.Find("Player"); 
+        if (player != null) { 
         target = GameObject.Find("Player").transform; 
 
     }
@@ -17,7 +19,10 @@ public class Chaser : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.LookAt(target);
-        transform.position += transform.forward * speed * Time.deltaTime;
+        if (target != null)
+        {
+            transform.LookAt(target);
+            transform.position += transform.forward * speed * Time.deltaTime;
+        }
     }
 }
